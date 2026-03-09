@@ -17,11 +17,8 @@ export default function Marquee() {
   const doubled = [...items, ...items];
 
   return (
-    <div className="relative overflow-hidden bg-amber-400 py-4 border-y border-amber-400/20">
-      <div
-        className="flex gap-12 whitespace-nowrap"
-        style={{ animation: "marquee 25s linear infinite" }}
-      >
+    <div className="relative bg-amber-400 border-y border-amber-400/20" style={{ overflow: "hidden", clipPath: "inset(0)", height: "46px", display: "flex", alignItems: "center", zIndex: 1 }}>
+      <div className="flex whitespace-nowrap items-center" style={{ animation: "marquee 25s linear infinite", willChange: "transform" }}>
         {doubled.map((item, i) => (
           <div key={i} className="flex items-center gap-12 flex-shrink-0">
             <span
